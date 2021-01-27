@@ -24,7 +24,7 @@ $ yarn dev
 
 ✔ **Desafio do Paulo:** Implemente a meta tag og:image utilizando a mesma imagem do background.
 
-![og-image](./.github/img/og-image.png)
+![og-image](./.github/img/og-image.PNG)
 
 ## 📝 Licença
 
