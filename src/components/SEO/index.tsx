@@ -1,12 +1,13 @@
 import Head from "next/head";
 
-export default function SEO({
-  title,
-  description,
-  image,
-  shouldIndexPage,
-}) {
+interface SEOProps {
+  title: string;
+  description?: string;
+  image: string;
+  shouldIndexPage?: boolean;
+}
 
+export default function SEO({ title, description, image, shouldIndexPage }: SEOProps) {
   return (
     <Head>
       <title>{title}</title>

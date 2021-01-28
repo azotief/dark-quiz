@@ -4,8 +4,8 @@ import db from "../db.json";
 
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
-import SEO from '../src/components/SEO';
-import { QuizBackground } from "../src/components/QuizBackground";
+import SEO from "../src/components/SEO";
+import QuizBackground from "../src/components/QuizBackground";
 import { Widget } from "../src/components/Widget";
 
 const QuizContainer = styled.aside`
@@ -41,8 +41,8 @@ export default function Home() {
             </Widget.Content>
           </Widget>
           <Footer />
-          <GitHubCorner projectUrl="https://github.com/azotief" />
         </QuizContainer>
+        <GitHubCorner projectUrl="https://github.com/azotief" />
       </QuizBackground>
     </>
   );
