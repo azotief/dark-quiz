@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const QuizBackground = styled.div`
+const Background = styled.div`
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -12,7 +12,7 @@ const QuizBackground = styled.div`
     background-image: none;
 
     &:after {
-      content: "";
+      content: '';
       background-size: cover;
       background-position: center;
       background-image: linear-gradient(
@@ -37,4 +37,4 @@ const QuizBackground = styled.div`
   }
 `;
 
-export default QuizBackground;
+export default Background;

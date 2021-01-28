@@ -1,4 +1,4 @@
-import { FooterWrapper } from "./styles";
+import { FooterWrapper } from './styles';
 
 export default function Footer(props) {
   return (
@@ -12,7 +12,7 @@ export default function Footer(props) {
       <p>
         Orgulhosamente criado durante a
         <a href="https://www.alura.com.br/">
-          <span>Imersão React da Alura</span>
+          <span> Imersão React da Alura</span>
         </a>
       </p>
     </FooterWrapper>

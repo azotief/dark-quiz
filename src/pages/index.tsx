@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import db from "../db.json";
+import db from '../../db.json';
 
-import Footer from "../src/components/Footer";
-import GitHubCorner from "../src/components/GitHubCorner";
-import SEO from "../src/components/SEO";
-import QuizBackground from "../src/components/QuizBackground";
-import { Widget } from "../src/components/Widget";
+import Footer from '../components/Footer';
+import GitHubCorner from '../components/GitHubCorner';
+import SEO from '../components/SEO';
+import Background from '../components/Background';
+import { Widget } from '../components/Widget';
 
-const QuizContainer = styled.aside`
+const Container = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <>
       <SEO title="Dark Quiz" image={db.bg} />
-      <QuizBackground backgroundImage={db.bg}>
-        <QuizContainer>
+      <Background backgroundImage={db.bg}>
+        <Container>
           <Widget>
             <Widget.Header>
               <h1>Dark</h1>
@@ -41,9 +41,9 @@ export default function Home() {
             </Widget.Content>
           </Widget>
           <Footer />
-        </QuizContainer>
+        </Container>
         <GitHubCorner projectUrl="https://github.com/azotief" />
-      </QuizBackground>
+      </Background>
     </>
   );
 }

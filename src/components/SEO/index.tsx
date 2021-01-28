@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 interface SEOProps {
   title: string;
@@ -7,7 +7,12 @@ interface SEOProps {
   shouldIndexPage?: boolean;
 }
 
-export default function SEO({ title, description, image, shouldIndexPage }: SEOProps) {
+export default function SEO({
+  title,
+  description,
+  image,
+  shouldIndexPage,
+}: SEOProps) {
   return (
     <Head>
       <title>{title}</title>

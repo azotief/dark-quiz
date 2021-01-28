@@ -1,6 +1,4 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-
-import db from "../db.json"
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -30,15 +28,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const theme = db.theme;
-
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  );
-}
+export default GlobalStyle;
