@@ -1,9 +1,4 @@
-import styled, { css } from 'styled-components';
-
-interface TopicProps {
-  selected: number;
-  alternativeIndex: number;
-}
+import styled from 'styled-components';
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -58,7 +53,7 @@ Widget.Content = styled.div`
   }
 `;
 
-Widget.Topic = styled.a<TopicProps>`
+Widget.Topic = styled.a`
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
@@ -75,11 +70,9 @@ Widget.Topic = styled.a<TopicProps>`
     opacity: 0.5;
   }
 
-  ${({ selected, alternativeIndex }: TopicProps) =>
-    selected === alternativeIndex &&
-    css`
-      opacity: 0.5;
-    `}
+  &[data-selected='true'] {
+    opacity: 0.5;
+  }
 `;
 
 export default Widget;

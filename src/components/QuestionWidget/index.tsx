@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Widget from '../Widget';
 import Button from '../Button';
+import AlternativesForm from '../AlternativesForm';
 
 interface Question {
   image: string;
@@ -16,6 +17,7 @@ interface QuestionWidgetProps {
   questionIndex: number;
   totalQuestions: number;
   onSubmit: Function;
+  addResult: Function;
 }
 
 export default function QuestionWidget({
@@ -23,10 +25,14 @@ export default function QuestionWidget({
   questionIndex,
   totalQuestions,
   onSubmit,
+  addResult,
 }: QuestionWidgetProps) {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(undefined);
+  const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
 
   const questionId = `question__${questionIndex}`;
+  const isCorrect = selected === question.answer;
+  const hasAlternativeSelected = selected !== undefined;
 
   return (
     <Widget>
@@ -47,30 +53,36 @@ export default function QuestionWidget({
         <h2>{question.title}</h2>
         <p>{question.description}</p>
 
-        <form
-          onSubmit={infosDoEvento => {
-            infosDoEvento.preventDefault();
-            setSelected(null);
-
-            onSubmit();
+        <AlternativesForm
+          onSubmit={event => {
+            event.preventDefault();
+            setIsQuestionSubmited(true);
+            setTimeout(() => {
+              addResult(isCorrect);
+              onSubmit();
+              setIsQuestionSubmited(false);
+              setSelected(undefined);
+            }, 3 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+            const isSelected = selected === alternativeIndex;
 
             return (
               <Widget.Topic
-                key={alternativeId}
                 as="label"
+                key={alternativeId}
                 htmlFor={alternativeId}
-                selected={selected}
-                alternativeIndex={alternativeIndex}
+                data-selected={isSelected}
+                data-status={isQuestionSubmited && alternativeStatus}
               >
                 <input
                   id={alternativeId}
                   name={questionId}
                   type="radio"
-                  onClick={() => setSelected(alternativeIndex)}
+                  onChange={() => setSelected(alternativeIndex)}
                   hidden
                 />
                 {alternative}
@@ -78,10 +90,13 @@ export default function QuestionWidget({
             );
           })}
 
-          <Button type="submit" disabled={selected === null}>
+          <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-        </form>
+        </AlternativesForm>
+
+        {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
+        {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
       </Widget.Content>
     </Widget>
   );

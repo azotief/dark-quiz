@@ -7,6 +7,7 @@ import Background from '../components/Background';
 import Container from '../components/Container';
 import LoadingWidget from '../components/LoadingWidget';
 import QuestionWidget from '../components/QuestionWidget';
+import ResultWidget from '../components/ResultWidget';
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -17,6 +18,7 @@ const screenStates = {
 export default function Quiz() {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [results, setResults] = useState([]);
 
   const totalQuestions = db.questions.length;
   const questionIndex = currentQuestion;
@@ -37,6 +39,10 @@ export default function Quiz() {
     }
   }
 
+  function addResult(result) {
+    setResults([...results, result]);
+  }
+
   return (
     <Background backgroundImage={db.bg}>
       <Container>
@@ -47,13 +53,14 @@ export default function Quiz() {
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
             onSubmit={handleSubmitQuiz}
+            addResult={addResult}
           />
         )}
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
         {screenState === screenStates.RESULT && (
-          <div>Você acertou X questões, parabéns!</div>
+          <ResultWidget results={results} />
         )}
       </Container>
     </Background>

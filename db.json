@@ -1,5 +1,5 @@
 {
-  "bg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp4056419.png&f=1&nofb=1",
+  "bg": "https://cdnb.artstation.com/p/assets/images/images/028/017/999/large/design-for-life-23-005.jpg?1593245598",
   "title": "Quiz da série Dark da Netflix",
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
@@ -56,7 +56,7 @@
   "external": [""],
   "theme": {
     "colors": {
-      "primary": "#a28b52",
+      "primary": "#d2c405",
       "secondary": "#5b32b0",
       "mainBg": "#232329",
       "contrastText": "#FFFFFF",
