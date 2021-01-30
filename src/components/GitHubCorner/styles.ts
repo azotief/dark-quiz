@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
 export const SVGWrapper = styled.svg`
   fill: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.mainBg};
   cursor: pointer;
 
   &:hover .octo-arm {

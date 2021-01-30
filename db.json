@@ -4,36 +4,61 @@
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dayofthehuman.com%2Fwp-content%2Fuploads%2F2017%2F12%2F52-Ines-stares-at-the-letter-after-listening-to-an-irate-voicemail-from-her-daughter-in-law-Hannah.jpg&f=1&nofb=1",
+      "title": "Resumidamente o que estava escrito na carta deixada pelo pai do Jonas?",
+      "description": "\"O começo é o fim e o fim é o começo.\"",
+      "answer": 3,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "É uma declaração do pai de Jonas, de antes do suicídio explicando como funciona o ciclo.",
+        "É uma declaração do pai de Jonas, de antes do suicídio explicando sobre a missão (do Jonas).",
+        "É uma declaração do pai de Jonas do porque ele se matou.",
+        "É uma declaração do pai de Jonas, de antes do suicídio explicando sobre a missão dele (Do pai) e sobre o ciclo."
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F1f%2F6a%2F2a%2F1f6a2afd8d97a871655e670f2e852746.png&f=1&nofb=1",
+      "title": "O que significa a frase \"Sic Mundus Creatus Est\"?",
+      "description": "\"O que sabemos é uma gota. O que não sabemos é um oceano.\"",
+      "answer": 1,
+      "alternatives": [
+        "Desde a Criação do Mundo",
+        "Assim o Mundo foi Criado",
+        "Eis que o Mundo Criado foi"
+      ]
+    },
+    {
+      "image": "https://img.quizur.com/f/img5ecdb45900fb87.57517289.jpg?lastEdited=1590539363",
+      "title": "Em que ano Mikkel reaparece?",
+      "description": "\"A pergunta não é como, mas quando.\"",
+      "answer": 1,
+      "alternatives": ["1990", "1986", "1953", "1980"]
+    },
+    {
+      "image": "https://img.quizur.com/f/img5ecdb439a8fb85.85986084.jpg?lastEdited=1590539331",
+      "title": "Qual é a relação entre esses dois personagens?",
+      "description": "\"Ontem, hoje e amanhã não são consecutivos, eles estão conectados em um círculo sem fim. Tudo está conectado.\"",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "São a mesma pessoa",
+        "Pai e filho",
+        "Irmãos",
+        "Avô e neto"
       ]
+    },
+    {
+      "image": "https://img.quizur.com/f/img5ecdb439a8fb85.85986084.jpg?lastEdited=1590539331",
+      "title": "Quem desapareceu em 1986?",
+      "description": "\"A diferença entre passado, presente e futuro não passa de uma ilusão.\"",
+      "answer": 2,
+      "alternatives": ["Mikkel", "Ulrich", "Mads"]
     }
   ],
-  "external": [
-    ""
-  ],
+  "external": [""],
   "theme": {
     "colors": {
       "primary": "#a28b52",
-      "secondary": "#232329",
-      "mainBg": "#171B35",
+      "secondary": "#5b32b0",
+      "mainBg": "#232329",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
       "success": "#4CAF50"

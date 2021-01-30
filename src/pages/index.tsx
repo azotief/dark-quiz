@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useState, useCallback, FormEvent } from 'react';
+import { useRouter } from 'next/router';
 
 import db from '../../db.json';
 
@@ -6,29 +7,35 @@ import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
 import SEO from '../components/SEO';
 import Background from '../components/Background';
-import { Widget } from '../components/Widget';
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import Logo from '../components/Logo';
+import Input from '../components/Input';
+import Button from '../components/Button';
+import Container from '../components/Container';
+import Widget from '../components/Widget';
 
 export default function Home() {
+  const [name, setName] = useState('');
+
+  const router = useRouter();
+
+  const handleSubmit = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+
+      router.push(`/quiz?name=${name}`);
+    },
+    [name, router],
+  );
+
   return (
     <>
-      <SEO title="Dark Quiz" image={db.bg} />
+      <SEO title={db.title} image={db.bg} />
       <Background backgroundImage={db.bg}>
         <Container>
+          <Logo />
           <Widget>
             <Widget.Header>
-              <h1>Dark</h1>
+              <h1>{db.title}</h1>
             </Widget.Header>
             <Widget.Content>
               <p>O começo é o fim, e o fim é o começo...</p>
@@ -36,8 +43,19 @@ export default function Home() {
           </Widget>
           <Widget>
             <Widget.Content>
-              <h1>Quizes da galera</h1>
-              <p>Tudo está conectado...</p>
+              <form onSubmit={handleSubmit}>
+                <Input
+                  name="name"
+                  placeholder="Digite o seu nome"
+                  onChange={event => setName(event.target.value)}
+                  value={name}
+                  autoComplete="off"
+                />
+
+                <Button type="submit" disabled={!name}>
+                  {`Jogar ${name}`}
+                </Button>
+              </form>
             </Widget.Content>
           </Widget>
           <Footer />
