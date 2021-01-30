@@ -1,6 +1,6 @@
 import Lottie from 'react-lottie';
 
-import animationData from './loading.json';
+import animationData from '../../animations/loading.json';
 
 import Widget from '../Widget';
 

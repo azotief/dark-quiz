@@ -53,7 +53,7 @@
       "alternatives": ["Mikkel", "Ulrich", "Mads"]
     }
   ],
-  "external": [""],
+  "external": ["https://mr-robot-quiz-alura.bryanauta.vercel.app/"],
   "theme": {
     "colors": {
       "primary": "#d2c405",

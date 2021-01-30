@@ -1,7 +1,10 @@
 import { useState, useCallback, FormEvent } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+import Lottie from 'react-lottie';
 
 import db from '../../db.json';
+import animationData from '../animations/empty.json';
 
 import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
@@ -12,11 +15,21 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import Container from '../components/Container';
 import Widget from '../components/Widget';
+import Link from '../components/Link';
 
 export default function Home() {
   const [name, setName] = useState('');
 
   const router = useRouter();
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   const handleSubmit = useCallback(
     (event: FormEvent) => {
@@ -33,15 +46,16 @@ export default function Home() {
       <Background backgroundImage={db.bg}>
         <Container>
           <Logo />
-          <Widget>
-            <Widget.Header>
-              <h1>{db.title}</h1>
-            </Widget.Header>
-            <Widget.Content>
-              <p>O começo é o fim, e o fim é o começo...</p>
-            </Widget.Content>
-          </Widget>
-          <Widget>
+          <Widget
+            as={motion.section}
+            transition={{ delay: 0, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <Widget.Content>
               <form onSubmit={handleSubmit}>
                 <Input
@@ -58,7 +72,63 @@ export default function Home() {
               </form>
             </Widget.Content>
           </Widget>
-          <Footer />
+          <Widget
+            as={motion.section}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          >
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
+            <Widget.Content>
+              <ul>
+                {db.external.length ? (
+                  db.external.map(linkExterno => {
+                    const [projectName, githubUser] = linkExterno
+                      .replace(/\//g, '')
+                      .replace('https:', '')
+                      .replace('.vercel.app', '')
+                      .split('.');
+
+                    return (
+                      <li key={linkExterno}>
+                        <Widget.Topic
+                          as={Link}
+                          href={`/quiz/${projectName}___${githubUser}`}
+                        >
+                          {`${githubUser}/${projectName}`}
+                        </Widget.Topic>
+                      </li>
+                    );
+                  })
+                ) : (
+                  <Lottie
+                    options={defaultOptions}
+                    height={100}
+                    width={100}
+                    isStopped={false}
+                    isPaused={false}
+                  />
+                )}
+              </ul>
+            </Widget.Content>
+          </Widget>
+
+          <Footer
+            as={motion.footer}
+            transition={{ delay: 1, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          />
         </Container>
         <GitHubCorner projectUrl="https://github.com/azotief" />
       </Background>
