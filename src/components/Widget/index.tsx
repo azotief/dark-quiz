@@ -26,7 +26,7 @@ const Widget = styled.div`
 
 Widget.Header = styled.header`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
@@ -72,6 +72,11 @@ Widget.Topic = styled.a`
 
   &[data-selected='true'] {
     opacity: 0.5;
+  }
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    background-color: #979797;
   }
 `;
 

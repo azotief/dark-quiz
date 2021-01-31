@@ -35,7 +35,7 @@ export default function Home() {
     (event: FormEvent) => {
       event.preventDefault();
 
-      router.push(`/quiz?name=${name}`);
+      router.push(`/quiz/my?name=${name}`);
     },
     [name, router],
   );
@@ -100,6 +100,7 @@ export default function Home() {
                         <Widget.Topic
                           as={Link}
                           href={`/quiz/${projectName}___${githubUser}`}
+                          data-disabled={!name}
                         >
                           {`${githubUser}/${projectName}`}
                         </Widget.Topic>

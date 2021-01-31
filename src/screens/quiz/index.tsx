@@ -4,7 +4,7 @@ import Logo from '../../components/Logo';
 import Background from '../../components/Background';
 import Container from '../../components/Container';
 import LoadingWidget from '../../components/LoadingWidget';
-import QuestionWidget from '../../components/QuestionWidget';
+import QuestionWidget, { Question } from '../../components/QuestionWidget';
 import ResultWidget from '../../components/ResultWidget';
 
 const screenStates = {
@@ -13,14 +13,19 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function Quiz({ externalQuestions, externalBg }) {
+interface QuizProps {
+  questions: Question[];
+  background: string;
+}
+
+export default function Quiz({ questions, background }: QuizProps) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [results, setResults] = useState([]);
 
-  const totalQuestions = externalQuestions.length;
+  const totalQuestions = questions.length;
   const questionIndex = currentQuestion;
-  const question = externalQuestions[questionIndex];
+  const question = questions[questionIndex];
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,7 +47,7 @@ export default function Quiz({ externalQuestions, externalBg }) {
   }
 
   return (
-    <Background backgroundImage={externalBg}>
+    <Background backgroundImage={background}>
       <Container>
         <Logo />
         {screenState === screenStates.QUIZ && (

@@ -51,9 +51,47 @@
       "description": "\"A diferença entre passado, presente e futuro não passa de uma ilusão.\"",
       "answer": 2,
       "alternatives": ["Mikkel", "Ulrich", "Mads"]
+    },
+    {
+      "image": "https://img.quizur.com/f/img5ecdb8f22f3569.72456093.jpg?lastEdited=1590540540",
+      "title": "Qual é a relação entre Mikkel e Jonas?",
+      "description": "\"O amor se cria na coragem. Então, não pense duas vezes.\"",
+      "answer": 1,
+      "alternatives": ["Irmãos", "Pai e filho", "Primos"]
+    },
+    {
+      "image": "https://img.quizur.com/f/img5ecdb589ec4247.77833675.png?lastEdited=1590539666",
+      "title": "A série se passa em 3 anos diferentes, qual é a diferença entre essas épocas?",
+      "description": "\"Mas cada decisão a favor de algo, é contra outra coisa.\"",
+      "answer": 0,
+      "alternatives": ["33 anos", "23 anos", "35 anos", "30 anos"]
+    },
+    {
+      "image": "https://img.quizur.com/f/img5f4317ca27aa37.65809581.jpeg?lastEdited=1598232524",
+      "title": "Na série Dark, toda a trama acontece em uma pequena cidade fictícia chamada Winden, na Alemanha?",
+      "description": "\"Por que a gente fala isso? \"Ter tempo\". Como podemos ter tempo quando é ele que nos tem?\"",
+      "answer": 0,
+      "alternatives": ["Sim", "Não"]
+    },
+    {
+      "image": "https://vignette.wikia.nocookie.net/villains/images/8/84/Adam-Dark.png/revision/latest?cb=20200714125644",
+      "title": "Quem é Adam no passado?",
+      "description": "\"O futuro é dos corajosos. Não dos que duvidam ou vivem no passado.\"",
+      "answer": 2,
+      "alternatives": ["Mikkel", "Ulrich", "Jonas", "Magnus"]
+    },
+    {
+      "image": "https://pbs.twimg.com/media/ECLzxYdXYAALE0I?format=jpg&name=large",
+      "title": "Qual é o parentesco de Bartosz e Jonas?",
+      "description": "\"A questão não é onde. A questão não é quem. A questão não é como., mas quando. A cada 33 anos a história se repete.\"",
+      "answer": 2,
+      "alternatives": ["Primos", "Bartosz é tio de Jonas", "Bartosz é tataravô de Jonas", "Bartosz é irmão de Jonas"]
     }
   ],
-  "external": ["https://mr-robot-quiz-alura.bryanauta.vercel.app/"],
+  "external": [
+    "https://mr-robot-quiz-alura.bryanauta.vercel.app/",
+    "https://tw3-quiz.lucas98fernando.vercel.app/"
+  ],
   "theme": {
     "colors": {
       "primary": "#d2c405",

@@ -1,23 +1,37 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+
+import db from '../../../db.json';
+
 import QuizScreen from '../../screens/quiz';
 
-export default function QuizDaGaleraPage({ dbExterno }) {
+interface QuizPageProps {
+  dbData: any;
+}
+
+export default function QuizPage({ dbData }: QuizPageProps) {
   return (
-    <ThemeProvider theme={dbExterno.theme}>
-      <QuizScreen
-        externalQuestions={dbExterno.questions}
-        externalBg={dbExterno.bg}
-      />
+    <ThemeProvider theme={dbData.theme}>
+      <QuizScreen questions={dbData.questions} background={dbData.bg} />
     </ThemeProvider>
   );
 }
 
 export async function getServerSideProps(context) {
-  const [projectName, githubUser] = context.query.id.split('___');
+  const { id } = context.query;
+
+  if (id === 'my') {
+    return {
+      props: {
+        dbData: db,
+      },
+    };
+  }
+
+  const [projectName, githubUser] = id.split('___');
 
   try {
-    const dbExterno = await fetch(
+    const externalDb = await fetch(
       `https://${projectName}.${githubUser}.vercel.app/api/db`,
     )
       .then(respostaDoServer => {
@@ -30,7 +44,7 @@ export async function getServerSideProps(context) {
 
     return {
       props: {
-        dbExterno,
+        dbData: externalDb,
       },
     };
   } catch (err) {
