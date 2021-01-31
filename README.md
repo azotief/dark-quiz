@@ -19,6 +19,19 @@ $ yarn dev
 
 # Pronto! O projeto está rodando no endereço: http://localhost:3000.
 ```
+## 🛠 Tecnologias
+
+Tecnologias utilizadas no desenvolvimento deste projeto:
+
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [styled components](https://styled-components.com/)
+- [React Lottie](https://www.npmjs.com/package/react-lottie)
+- [Framer Motion](https://www.framer.com/motion/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [EditorConfig](https://editorconfig.org/)
 
 ## 🚀 Alguns desafios e validações implementados
 ✔ **Desafio do Paulo:** Implemente a meta tag og:image utilizando a mesma imagem do background.
