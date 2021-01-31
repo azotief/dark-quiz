@@ -56,6 +56,9 @@ export default function Home() {
             initial="hidden"
             animate="show"
           >
+            <Widget.Header>
+              <h1>{db.title}</h1>
+            </Widget.Header>
             <Widget.Content>
               <form onSubmit={handleSubmit}>
                 <Input
@@ -83,7 +86,7 @@ export default function Home() {
             animate="show"
           >
             <Widget.Header>
-              <h1>{db.title}</h1>
+              <h1>Outros quizes</h1>
             </Widget.Header>
             <Widget.Content>
               <ul>
