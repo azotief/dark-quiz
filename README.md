@@ -57,9 +57,7 @@ Tecnologias utilizadas no desenvolvimento deste projeto:
 Este projeto está licenciado sob a Licença **MIT** - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 ## Deploy
-Links de produção deste quiz:
-
-Vercel: https://dark-quiz.brfeitoza.vercel.app
+Vercel: https://alura-quiz.brfeitoza.vercel.app
 
 ---
 
