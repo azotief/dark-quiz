@@ -58,7 +58,7 @@ Este projeto está licenciado sob a Licença **MIT** - consulte o arquivo [LICEN
 
 ## Deploy
 
-Vercel: https://alura-quiz.brfeitoza.vercel.app
+Vercel: https://alura-quiz-brfeitoza.vercel.app/
 
 ---
 
