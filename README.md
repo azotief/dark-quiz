@@ -59,7 +59,8 @@ Este projeto está licenciado sob a Licença **MIT** - consulte o arquivo [LICEN
 ## Deploy
 Links de produção deste quiz:
 
-Domínio próprio: https://dark-quiz.brfeitoza.dev 
+Domínio próprio: https://dark-quiz.brfeitoza.dev
+
 Vercel: https://dark-quiz.brfeitoza.vercel.app
 
 ---
